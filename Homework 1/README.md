@@ -4,7 +4,7 @@ Marko Milosavljevic
 CSC 436 Web Applications
 
 GitHub URL: 
-https://github.com/MarMil1/CSC436-Web-Applications/blob/master/Homework%201/index.html\
+https://github.com/MarMil1/CSC436-Web-Applications/blob/master/Homework%201/index.html
 
 -Provided code for all TODO segments
 -Used bootstrap and styled css
