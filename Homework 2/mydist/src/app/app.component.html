@@ -1,3 +1,9 @@
+<div class="messaging">
 <app-my-image></app-my-image>
-<app-my-button></app-my-button>
+<app-my-button></app-my-button> 
+<div class='message' *ngFor="let message of arrMessages.messagesArray">
+        {{message.text}} {{message.timestamp}}    
+</div>
+</div>
+
 <router-outlet></router-outlet>

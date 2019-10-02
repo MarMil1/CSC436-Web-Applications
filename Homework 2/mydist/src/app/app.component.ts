@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Messages } from './models/messages';
+import { MessagesService } from './messages.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mydist';
+  arrMessages = new Messages();
+
+  constructor(messagesService: MessagesService) {
+    this.arrMessages = messagesService.findArrayMessages();
+    console.log(this.arrMessages.messagesArray.length);
+    
+  }
+
 }
+
+
