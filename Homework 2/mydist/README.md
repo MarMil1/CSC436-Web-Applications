@@ -1,4 +1,4 @@
-# Homework 1
+# Homework 2
 
 Marko Milosavljevic
 CSC 436 Web Applications
