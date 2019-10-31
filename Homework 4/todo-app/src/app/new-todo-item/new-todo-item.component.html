@@ -1,1 +1,7 @@
-<p>new-todo-item works!</p>
+<form class="form-inline">
+  <div class="form-group mx-sm-3 mb-2" style="margin-top:20px;">
+    <input type="text" class="form-control" placeholder="Add New ToDo" style="width:400px; margin-left:10px;"
+    [(ngModel)]="newTask.task" name="newTask">
+  </div>
+  <button type="button" class="btn btn-primary mb-2" style="margin:5px; margin-top:20px;" (click)="AddNewTask()">Create New ToDo</button>
+</form>

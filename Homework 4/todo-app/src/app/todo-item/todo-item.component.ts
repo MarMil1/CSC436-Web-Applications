@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Todo } from '../todo.model';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'app-todo-item',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-item.component.css']
 })
 export class TodoItemComponent implements OnInit {
+  @Input() todoList: Todo[];
 
-  constructor() { }
+  constructor(private todoService: TodoService) { }
 
   ngOnInit() {
+  }
+
+  onClickDueDate(todo, event){
+    this.todoService.editTask(todo.id, {dueDate: event.target.value})
+    .catch(e => console.log(e));
+  }
+
+  onClickDelete(todo) {
+    this.todoService.removeTask(todo.id);
+
   }
 
 }

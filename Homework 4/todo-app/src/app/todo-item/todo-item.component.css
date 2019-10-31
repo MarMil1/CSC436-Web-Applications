@@ -1,0 +1,20 @@
+.btn1 {
+    background-color: green;
+    color: white;
+}
+
+.btn2 {
+    background-color: rgb(176, 39, 39);
+    color: white;
+}
+
+.btn3 {
+    background-color: rgb(0, 102, 255);
+    color: white;
+}
+
+
+.isChosen {
+    background-color: lightgray;
+    color: black;
+}
