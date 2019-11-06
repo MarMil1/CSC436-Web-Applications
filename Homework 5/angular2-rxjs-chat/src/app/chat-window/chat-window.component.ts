@@ -25,6 +25,7 @@ export class ChatWindowComponent implements OnInit {
   currentThread: Thread;
   draftMessage: Message;
   currentUser: User;
+  isOpened = false;
 
   constructor(public messagesService: MessagesService,
               public threadsService: ThreadsService,
@@ -75,5 +76,19 @@ export class ChatWindowComponent implements OnInit {
     const scrollPane: any = this.el
       .nativeElement.querySelector('.msg-container-base');
     scrollPane.scrollTop = scrollPane.scrollHeight;
+  }
+
+  toggle() {
+    this.isOpened = !this.isOpened;
+    var target1 = document.getElementById('msg-box1');
+    var target2 = document.getElementById('msg-box2');
+
+    if (this.isOpened) {
+      target1.style.display = 'none';
+      target2.style.display = 'none';
+    } else {
+      target1.style.display = 'block';
+      target2.style.display = 'block';
+    }
   }
 }

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
+  <div class="container-fluid" style="display:block;">
     <div class="navbar-header">
       <a class="navbar-brand" href="https://ng-book.com/2">
         <img src="assets/images/logos/ng-book-2-minibook.png"/>
@@ -7,9 +7,10 @@
       </a>
     </div>
     <p class="navbar-text navbar-right">
-      <button class="btn btn-primary" type="button">
+      <button class="btn btn-primary mr-3" type="button">
         Messages <span class="badge">{{ unreadMessagesCount }}</span>
       </button>
+      <button class="btn btn-danger" (click)="signOut()">Logout</button>
     </p>
   </div>
 </nav>

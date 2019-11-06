@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { UsersService } from './user/users.service';
@@ -19,30 +19,42 @@ import { environment } from 'environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './login/login.component';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ChatMessageComponent,
-    ChatThreadComponent,
-    ChatNavBarComponent,
-    ChatThreadsComponent,
-    ChatWindowComponent,
-    ChatPageComponent,
-    FromNowPipe
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule,
-  ],
-  providers: [
-    MessagesService, ThreadsService, UsersService
-  ],
-
-  bootstrap: [AppComponent]
+   declarations: [
+      AppComponent,
+      ChatMessageComponent,
+      ChatThreadComponent,
+      ChatNavBarComponent,
+      ChatThreadsComponent,
+      ChatWindowComponent,
+      ChatPageComponent,
+      FromNowPipe,
+      LoginComponent
+   ],
+   imports: [
+      BrowserModule,
+      FormsModule,
+      ReactiveFormsModule,
+      AngularFireAuthModule,
+      HttpClientModule,
+      AppRoutingModule,
+      AngularFireModule.initializeApp(environment.firebaseConfig),
+      AngularFireDatabaseModule
+   ],
+   providers: [
+      MessagesService,
+      ThreadsService,
+      UsersService,
+      AuthService,
+      AuthGuard
+   ],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule { }

@@ -11,6 +11,7 @@ import { MessagesService } from './../message/messages.service';
 import { Thread } from './../thread/thread.model';
 import { Message } from './../message/message.model';
 import { combineLatest } from 'rxjs/operators';
+import { AuthService } from 'app/auth.service';
 
 @Component({
   selector: 'chat-nav-bar',
@@ -21,7 +22,8 @@ export class ChatNavBarComponent implements OnInit {
   unreadMessagesCount: number;
 
   constructor(public messagesService: MessagesService,
-              public threadsService: ThreadsService) {
+              public threadsService: ThreadsService,
+              private authService: AuthService) {
   }
 
   ngOnInit(): void {
@@ -49,5 +51,9 @@ export class ChatNavBarComponent implements OnInit {
             },
             0);
       });
+  }
+
+  signOut() {
+    this.authService.logout();
   }
 }
